@@ -275,7 +275,7 @@ const AllCompanies = () => {
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-3">
             Discover{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme_color to-teal-600">
+            <span className="text-teal-600">
               Leading Companies
             </span>
           </h1>

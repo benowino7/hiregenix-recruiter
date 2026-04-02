@@ -19,7 +19,7 @@ export default function UpgradeModal({ open, onClose, feature = "", message = ""
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="relative w-full max-w-md mx-4 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden">
         {/* Gradient Header */}
-        <div className="bg-gradient-to-r from-teal-500 to-amber-500 p-6 text-white text-center">
+        <div className="bg-teal-600 p-6 text-white text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
             <Crown className="w-8 h-8" />
           </div>
@@ -58,7 +58,7 @@ export default function UpgradeModal({ open, onClose, feature = "", message = ""
             </button>
             <button
               onClick={() => { onClose(); navigate("/dashboard/subscriptions"); }}
-              className="flex-1 py-3 px-4 bg-gradient-to-r from-teal-600 to-amber-500 text-white font-semibold rounded-xl hover:from-teal-700 hover:to-amber-600 transition-all flex items-center justify-center gap-2 shadow-lg shadow-teal-500/30"
+              className="flex-1 py-3 px-4 bg-teal-600 text-white font-semibold rounded-xl hover:bg-teal-700 transition-all flex items-center justify-center gap-2 shadow-lg"
             >
               Upgrade <ArrowRight className="w-4 h-4" />
             </button>

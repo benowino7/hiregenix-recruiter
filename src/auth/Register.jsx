@@ -568,7 +568,7 @@ const Register = () => {
                                     <button
                                         type="button"
                                         onClick={handleNext}
-                                        className="flex-1 px-6 py-3 bg-theme_color/90 hover:bg-dark-theme_color text-white rounded-lg font-semibold transition flex items-center justify-center gap-2 shadow-lg shadow-teal-600/30"
+                                        className="flex-1 px-6 py-3 bg-theme_color/90 hover:bg-dark-theme_color text-white rounded-lg font-semibold transition flex items-center justify-center gap-2 shadow-lg"
                                         disabled={isLoading}
                                     >
                                         Continue
@@ -577,7 +577,7 @@ const Register = () => {
                                 ) : (
                                     <button
                                         type="submit"
-                                        className="flex-1 px-6 py-3 bg-theme_color/90 hover:bg-dark-theme_color text-white rounded-lg font-semibold transition flex items-center justify-center gap-2 shadow-lg shadow-teal-600/30 disabled:opacity-50"
+                                        className="flex-1 px-6 py-3 bg-theme_color/90 hover:bg-dark-theme_color text-white rounded-lg font-semibold transition flex items-center justify-center gap-2 shadow-lg disabled:opacity-50"
                                         disabled={isLoading}
                                     >
                                         {isLoading ? (

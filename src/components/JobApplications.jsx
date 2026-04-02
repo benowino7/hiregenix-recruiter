@@ -99,12 +99,12 @@ const maskPhone = (phone) => {
 
 const avatarColor = (str) => {
   const colors = [
-    "from-teal-400 to-rose-500",
-    "from-violet-500 to-indigo-600",
-    "from-teal-400 to-cyan-600",
-    "from-amber-400 to-teal-500",
-    "from-green-400 to-emerald-600",
-    "from-pink-400 to-fuchsia-600",
+    "bg-teal-600",
+    "bg-violet-600",
+    "bg-cyan-600",
+    "bg-amber-600",
+    "bg-emerald-600",
+    "bg-pink-600",
   ];
   let h = 0;
   for (let i = 0; i < (str || "").length; i++)
@@ -323,7 +323,7 @@ const StatusConfirmModal = ({
         <div className="mx-6 mb-5 p-3.5 bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-100 dark:border-gray-800">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className={`w-9 h-9 rounded-full bg-gradient-to-br ${avatarColor(user.firstName + user.lastName)} flex items-center justify-center text-white font-bold text-xs flex-shrink-0`}
+              className={`w-9 h-9 rounded-full ${avatarColor(user.firstName + user.lastName)} flex items-center justify-center text-white font-bold text-xs flex-shrink-0`}
             >
               {initials(user.firstName, user.lastName)}
             </div>
@@ -536,7 +536,7 @@ const CoverLetterDrawer = ({ app, onClose, setCvPreview, isPlatinum, onUpgrade }
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-gray-800">
           <div className="flex items-center gap-3">
             <div
-              className={`w-10 h-10 rounded-full bg-gradient-to-br ${avatarColor(user.firstName + user.lastName)} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}
+              className={`w-10 h-10 rounded-full ${avatarColor(user.firstName + user.lastName)} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}
             >
               {initials(user.firstName, user.lastName)}
             </div>
@@ -1325,7 +1325,7 @@ export default function JobApplications({ companyId, subscription }) {
                           }
                           navigate(`/dashboard/jobs/${selectedJob.id}/ai-rankings`);
                         }}
-                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 rounded-lg transition-all shadow-sm"
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-all shadow-sm"
                       >
                         <Brain className="w-3.5 h-3.5" />
                         AI Rank
@@ -1691,7 +1691,7 @@ export default function JobApplications({ companyId, subscription }) {
                                   <td className="px-4 py-4 whitespace-nowrap">
                                     <div className="flex items-center gap-3">
                                       <div
-                                        className={`w-9 h-9 rounded-full bg-gradient-to-br ${avatarColor(user.firstName + user.lastName)} flex items-center justify-center text-white font-bold text-xs flex-shrink-0`}
+                                        className={`w-9 h-9 rounded-full ${avatarColor(user.firstName + user.lastName)} flex items-center justify-center text-white font-bold text-xs flex-shrink-0`}
                                       >
                                         {initials(
                                           user.firstName,

@@ -264,7 +264,7 @@ function CvBuilder({ subscription }) {
       </div>
       <div className="h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
         <div
-          className="h-full bg-gradient-to-r from-teal-500 to-amber-500 transition-all duration-500 rounded-full"
+          className="h-full bg-teal-600 transition-all duration-500 rounded-full"
           style={{ width: `${(step / totalSteps) * 100}%` }}
         />
       </div>
@@ -276,7 +276,7 @@ function CvBuilder({ subscription }) {
             onClick={() => setStep(i + 1)}
             className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-all ${
               i + 1 === step
-                ? 'bg-theme_color text-white shadow-lg shadow-teal-500/30 scale-110'
+                ? 'bg-theme_color text-white shadow-lg scale-110'
                 : i + 1 < step
                 ? 'bg-theme_color/20 text-theme_color'
                 : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400'
@@ -450,7 +450,7 @@ function CvBuilder({ subscription }) {
               {data.skills.map(skill => (
                 <div
                   key={skill}
-                  className="bg-gradient-to-r from-teal-50 to-amber-50 dark:from-teal-900/20 dark:to-amber-900/20 text-theme_color px-3 py-1.5 rounded-full flex items-center gap-2 text-sm border border-theme_color/20"
+                  className="bg-teal-50 dark:bg-teal-900/20 text-theme_color px-3 py-1.5 rounded-full flex items-center gap-2 text-sm border border-theme_color/20"
                 >
                   {skill}
                   <button
@@ -603,7 +603,7 @@ function CvBuilder({ subscription }) {
                 current: false,
                 description: ''
               })}
-              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-teal-500 to-amber-500 text-white rounded-xl hover:from-teal-600 hover:to-amber-600 shadow-lg shadow-teal-500/20 transition-all font-medium"
+              className="flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white rounded-xl hover:bg-teal-700 shadow-lg transition-all font-medium"
             >
               <Plus size={18} /> Add Experience
             </button>
@@ -688,7 +688,7 @@ function CvBuilder({ subscription }) {
                 startYear: '',
                 endYear: ''
               })}
-              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-teal-500 to-amber-500 text-white rounded-xl hover:from-teal-600 hover:to-amber-600 shadow-lg shadow-teal-500/20 transition-all font-medium"
+              className="flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white rounded-xl hover:bg-teal-700 shadow-lg transition-all font-medium"
             >
               <Plus size={18} /> Add Education
             </button>
@@ -762,7 +762,7 @@ function CvBuilder({ subscription }) {
                 issueYear: '',
                 expiryYear: ''
               })}
-              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-teal-500 to-amber-500 text-white rounded-xl hover:from-teal-600 hover:to-amber-600 shadow-lg shadow-teal-500/20 transition-all font-medium"
+              className="flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white rounded-xl hover:bg-teal-700 shadow-lg transition-all font-medium"
             >
               <Plus size={18} /> Add Certification
             </button>
@@ -846,7 +846,7 @@ function CvBuilder({ subscription }) {
                   {data.preferences.jobTitles.map(t => (
                     <div
                       key={t}
-                      className="bg-gradient-to-r from-teal-50 to-amber-50 dark:from-teal-900/20 dark:to-amber-900/20 text-theme_color px-3 py-1.5 rounded-full flex items-center gap-2 text-sm border border-theme_color/20"
+                      className="bg-teal-50 dark:bg-teal-900/20 text-theme_color px-3 py-1.5 rounded-full flex items-center gap-2 text-sm border border-theme_color/20"
                     >
                       {t}
                       <button onClick={() => removePreferenceItem('jobTitles', t)} className="text-theme_color hover:text-red-600">&times;</button>
@@ -876,7 +876,7 @@ function CvBuilder({ subscription }) {
                   {data.preferences.industries.map(ind => (
                     <div
                       key={ind}
-                      className="bg-gradient-to-r from-teal-50 to-amber-50 dark:from-teal-900/20 dark:to-amber-900/20 text-theme_color px-3 py-1.5 rounded-full flex items-center gap-2 text-sm border border-theme_color/20"
+                      className="bg-teal-50 dark:bg-teal-900/20 text-theme_color px-3 py-1.5 rounded-full flex items-center gap-2 text-sm border border-theme_color/20"
                     >
                       {ind}
                       <button onClick={() => removePreferenceItem('industries', ind)} className="text-theme_color hover:text-red-600">&times;</button>
@@ -1116,7 +1116,7 @@ function CvBuilder({ subscription }) {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className="bg-gradient-to-r from-teal-600 to-amber-500 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-b-2xl shadow-lg shadow-teal-500/10">
+        <div className="bg-teal-600 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-b-2xl shadow-lg">
           <h1 className="text-2xl font-bold text-white">HireGeniX CV Builder</h1>
           <div className="flex gap-3">
             <button
@@ -1169,7 +1169,7 @@ function CvBuilder({ subscription }) {
                   <button
                     onClick={handleExportPdf}
                     disabled={pdfLoading}
-                    className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-amber-500 text-white rounded-xl shadow-lg shadow-teal-500/20 hover:from-teal-600 hover:to-amber-600 transition-all font-semibold disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-6 py-3 bg-teal-600 text-white rounded-xl shadow-lg hover:bg-teal-700 transition-all font-semibold disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {pdfLoading ? (
                       <>
@@ -1186,7 +1186,7 @@ function CvBuilder({ subscription }) {
                 ) : (
                   <button
                     onClick={() => setStep(s => Math.min(totalSteps, s + 1))}
-                    className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-amber-500 text-white rounded-xl shadow-lg shadow-teal-500/20 hover:from-teal-600 hover:to-amber-600 transition-all font-semibold"
+                    className="flex items-center gap-2 px-6 py-3 bg-teal-600 text-white rounded-xl shadow-lg hover:bg-teal-700 transition-all font-semibold"
                   >
                     Next
                     <ChevronRight size={18} />
@@ -1206,7 +1206,7 @@ function CvBuilder({ subscription }) {
                     key={t}
                     onClick={() => setTemplate(t)}
                     className={`px-4 py-1.5 text-sm rounded-xl transition-all font-medium ${template === t
-                        ? 'bg-gradient-to-r from-teal-500 to-amber-500 text-white shadow-md shadow-teal-500/20'
+                        ? 'bg-teal-600 text-white shadow-md'
                         : 'bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300'
                       }`}
                   >

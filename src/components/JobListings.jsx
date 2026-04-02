@@ -141,8 +141,8 @@ const JobListings = () => {
     const daysAgo = Math.floor((new Date() - new Date(job.postedDate)) / (1000 * 60 * 60 * 24));
 
     return (
-      <a href={job.applyUrl} className="group relative bg-white dark:bg-dark-sidebar rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-500 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/0 to-teal-600/0 group-hover:from-teal-500/5 group-hover:to-teal-600/5 transition-all duration-500 pointer-events-none" />
+      <a href={job.applyUrl} className="group relative bg-white dark:bg-dark-sidebar rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-500 hover:shadow-xl transition-all duration-300 overflow-hidden">
+        <div className="absolute inset-0 group-hover:bg-teal-500/5 transition-all duration-500 pointer-events-none" />
 
         <div className="relative p-6">
           <div className="flex items-start justify-between mb-4">
@@ -211,7 +211,7 @@ const JobListings = () => {
           <p className="text-sm text-slate-600 dark:text-slate-400 mb-5 line-clamp-2">{job.description}</p>
 
           {/* View Button */}
-          <span className="w-full bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold py-3 px-4 rounded-xl text-center shadow-lg hover:shadow-xl transition-all group-hover:scale-[1.02] flex items-center justify-center gap-2">
+          <span className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-4 rounded-xl text-center shadow-lg hover:shadow-xl transition-all group-hover:scale-[1.02] flex items-center justify-center gap-2">
             <Briefcase size={18} />
             View Job
           </span>
@@ -226,7 +226,7 @@ const JobListings = () => {
 
     return (
       <a href={job.applyUrl}
-        className="group relative flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-6 px-5 sm:px-6 py-5 sm:py-6 hover:bg-gradient-to-r hover:from-teal-50/40 hover:to-transparent dark:hover:from-orange-950/20 dark:hover:to-transparent transition-all duration-250 ease-out cursor-pointer bg-white dark:bg-dark-sidebar rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700"
+        className="group relative flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-6 px-5 sm:px-6 py-5 sm:py-6 hover:bg-teal-50/40 dark:hover:bg-orange-950/20 transition-all duration-250 ease-out cursor-pointer bg-white dark:bg-dark-sidebar rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700"
       >
         <div className="relative flex-shrink-0 self-start sm:self-center">
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg ring-1 ring-slate-100/70 dark:ring-slate-700/50 transition-all duration-300">
@@ -280,7 +280,7 @@ const JobListings = () => {
         </div>
 
         <div className="flex-shrink-0 self-start sm:self-center mt-4 sm:mt-0">
-          <span className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold text-sm sm:text-base rounded-xl shadow-md hover:shadow-lg transition-all duration-250 group-hover:scale-105 active:scale-95">
+          <span className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm sm:text-base rounded-xl shadow-md hover:shadow-lg transition-all duration-250 group-hover:scale-105 active:scale-95">
             View
             <Briefcase size={17} />
           </span>
@@ -290,7 +290,7 @@ const JobListings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 dark:from-dark-background dark:via-slate-900 dark:to-dark-background py-8">
+    <div className="min-h-screen bg-[#FAFBFC] dark:bg-dark-background py-8">
       {/* Hero Section */}
       <div className="text-white pt-16 pb-24 px-4">
         <div className="max-w-[90rem] mx-auto">
@@ -347,7 +347,7 @@ const JobListings = () => {
                     setIsAiSearch(true);
                     triggerSearch(true);
                   }}
-                  className="px-8 py-4 bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all whitespace-nowrap flex items-center gap-2"
+                  className="px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all whitespace-nowrap flex items-center gap-2"
                 >
                   <Zap size={18} />
                   AI Search

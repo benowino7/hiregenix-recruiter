@@ -53,8 +53,8 @@ const ProfileProgressSection = () => {
       label: "Match Rate",
       description:
         "Our AI matches candidates with surgical precision based on skills, experience, and cultural fit",
-      color: "from-amber-400 via-teal-500 to-red-500",
-      accent: "#f59e0b",
+      flatColor: "bg-teal-600",
+      accent: "#0097A7",
     },
     {
       icon: Rocket,
@@ -63,8 +63,8 @@ const ProfileProgressSection = () => {
       label: "Faster",
       description:
         "Cut your time-to-hire in half with automated screening and intelligent candidate ranking",
-      color: "from-violet-400 via-purple-500 to-fuchsia-500",
-      accent: "#a855f7",
+      flatColor: "bg-teal-600",
+      accent: "#0097A7",
     },
     {
       icon: ShieldCheck,
@@ -73,8 +73,8 @@ const ProfileProgressSection = () => {
       label: "Avg Rating",
       description:
         "Pre-vetted candidates with verified skills and experience you can trust",
-      color: "from-emerald-400 via-teal-500 to-cyan-500",
-      accent: "#14b8a6",
+      flatColor: "bg-teal-600",
+      accent: "#0097A7",
     },
     {
       icon: Star,
@@ -83,8 +83,8 @@ const ProfileProgressSection = () => {
       label: "More Views",
       description:
         "Showcase your employer brand to reach passive candidates who aren't actively searching",
-      color: "from-blue-400 via-indigo-500 to-purple-500",
-      accent: "#6366f1",
+      flatColor: "bg-teal-600",
+      accent: "#0097A7",
     },
   ];
 
@@ -114,7 +114,7 @@ const ProfileProgressSection = () => {
                   <span className="">
                     Recruitment Empire
                   </span>
-                  <div className="absolute -inset-2 bg-gradient-to-r from-theme_color/30 via-purple-500/30 to-blue-400/30 blur-2xl -z-10 animate-pulse-slow" />
+                  <div className="absolute -inset-2 bg-teal-500/30 blur-2xl -z-10 animate-pulse-slow" />
                 </span>
               </h2>
 
@@ -133,7 +133,7 @@ const ProfileProgressSection = () => {
                 ].map((stat, i) => (
                   <div key={i} className="group relative">
                     <div className="relative flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/20 shadow-lg">
-                      <div className="p-2 bg-gradient-to-br from-teal-500 to-purple-600 rounded-xl">
+                      <div className="p-2 bg-teal-600 rounded-xl">
                         <stat.icon className="text-white" size={20} />
                       </div>
                       <div>
@@ -148,9 +148,9 @@ const ProfileProgressSection = () => {
               <div className="flex flex-col sm:flex-row gap-5 pt-4">
                 <a
                   href="/register"
-                  className="group relative px-10 py-6 bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 rounded-2xl font-bold text-white text-lg shadow-2xl shadow-teal-500/40 hover:shadow-teal-500/60 transition-all duration-300 overflow-hidden"
+                  className="group relative px-10 py-6 bg-teal-600 rounded-2xl font-bold text-white text-lg shadow-2xl hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   <div className="relative flex items-center justify-center gap-3">
                     <span>Start Hiring Today</span>
                     <ArrowRight
@@ -184,7 +184,7 @@ const ProfileProgressSection = () => {
                     alt="Recruiter dashboard"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 via-transparent to-purple-600/20" />
+                  <div className="absolute inset-0 bg-teal-500/10" />
                 </div>
 
                 {/* Secondary image */}
@@ -197,7 +197,7 @@ const ProfileProgressSection = () => {
                     alt="Team collaboration"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-600/20" />
+                  <div className="absolute inset-0 bg-teal-500/10" />
                 </div>
               </div>
             </div>
@@ -209,7 +209,7 @@ const ProfileProgressSection = () => {
           SECTION 2: Benefits – Why Choose Us
           Light / neutral background for contrast
       ────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 py-24">
+      <section className="relative bg-[#FAFBFC] dark:bg-slate-900 py-24">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
@@ -229,19 +229,19 @@ const ProfileProgressSection = () => {
                 onMouseLeave={() => setActiveCard(null)}
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                  className={"absolute inset-0 bg-teal-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500"}
                 />
                 <div
                   className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    background: `linear-gradient(135deg, ${benefit.accent}20 0%, transparent 50%)`,
+                    background: `${benefit.accent}15`,
                   }}
                 />
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-6">
                     <div
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500`}
+                      className={`w-16 h-16 rounded-2xl ${benefit.flatColor} flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500`}
                     >
                       <benefit.icon className="text-white" size={32} />
                     </div>
@@ -255,7 +255,7 @@ const ProfileProgressSection = () => {
                     </div>
                   </div>
 
-                  <h4 className="text-2xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-purple-600 transition-all duration-300">
+                  <h4 className="text-2xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-teal-600 transition-all duration-300">
                     {benefit.title}
                   </h4>
                   <p className="text-slate-600 dark:text-white leading-relaxed">
@@ -272,7 +272,7 @@ const ProfileProgressSection = () => {
           SECTION 3: Working Process – 4 Steps
           Soft accent background
       ────────────────────────────────────────────── */}
-      <section id="how_it_works" className="w-full relative bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 dark:from-slate-800 dark:via-indigo-950 dark:to-slate-950 py-24">
+      <section id="how_it_works" className="w-full relative bg-[#FAFBFC] dark:bg-slate-800 py-24">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-3 px-5 py-2 bg-slate-800 dark:bg-white rounded-full mb-6">
@@ -291,7 +291,7 @@ const ProfileProgressSection = () => {
           </div>
 
           <div className="relative w-full mx-auto">
-            <div className="hidden lg:block absolute top-32 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 via-purple-600 to-blue-600 rounded-full" />
+            <div className="hidden lg:block absolute top-32 left-0 right-0 h-1 bg-teal-600 rounded-full" />
 
             <div className="grid lg:grid-cols-4 gap-12 lg:gap-8">
               {steps.map((step, index) => (
@@ -302,8 +302,8 @@ const ProfileProgressSection = () => {
                 >
                   <div className="flex justify-center mb-8">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-purple-600 rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-teal-500 to-purple-600 flex items-center justify-center shadow-2xl border-4 border-white dark:border-slate-900 group-hover:scale-110 transition-transform duration-500">
+                      <div className="absolute inset-0 bg-teal-600 rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-20 h-20 rounded-full bg-teal-600 flex items-center justify-center shadow-2xl border-4 border-white dark:border-slate-900 group-hover:scale-110 transition-transform duration-500">
                         <span className="text-2xl font-black text-white">
                           {index + 1}
                         </span>

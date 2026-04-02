@@ -29,40 +29,40 @@ import successMessage from "../utilities/successMessage";
 // ─── Static visual config keyed by plan name ──────────────────────────────────
 const PLAN_VISUAL = {
   "Diamond": {
-    gradient: "from-slate-400 to-slate-600",
-    cardBg:
-      "bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-800 dark:to-gray-900",
-    shadowColor: "shadow-slate-200/60 dark:shadow-slate-900/60",
+    accentColor: "text-slate-600",
+    accentBg: "bg-slate-600",
+    cardBg: "bg-slate-50 dark:bg-gray-800",
+    shadowColor: "shadow-lg",
     popular: false,
     icon: Shield,
     subtitle: "Single (1) Job Posting",
     description: "Post a single job vacancy",
   },
   "Diamond Compact": {
-    gradient: "from-amber-400 via-yellow-500 to-teal-500",
-    cardBg:
-      "bg-gradient-to-br from-amber-50 to-teal-100 dark:from-amber-950 dark:to-orange-950",
-    shadowColor: "shadow-amber-200/60 dark:shadow-amber-900/60",
+    accentColor: "text-teal-600",
+    accentBg: "bg-teal-600",
+    cardBg: "bg-amber-50 dark:bg-amber-950",
+    shadowColor: "shadow-lg",
     popular: true,
     icon: Crown,
     subtitle: "Three (3) Job Postings",
     description: "Best value for growing teams",
   },
   "Diamond Compact Plus": {
-    gradient: "from-purple-500 via-indigo-500 to-blue-600",
-    cardBg:
-      "bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-purple-950 dark:to-indigo-950",
-    shadowColor: "shadow-purple-200/60 dark:shadow-purple-900/60",
+    accentColor: "text-purple-600",
+    accentBg: "bg-purple-600",
+    cardBg: "bg-purple-50 dark:bg-purple-950",
+    shadowColor: "shadow-lg",
     popular: false,
     icon: Sparkles,
     subtitle: "Five (5) Job Postings",
     description: "For active hiring teams",
   },
   "Diamond Unlimited": {
-    gradient: "from-cyan-400 via-sky-500 to-blue-600",
-    cardBg:
-      "bg-gradient-to-br from-cyan-50 to-sky-100 dark:from-cyan-950 dark:to-sky-950",
-    shadowColor: "shadow-cyan-200/60 dark:shadow-cyan-900/60",
+    accentColor: "text-cyan-600",
+    accentBg: "bg-cyan-600",
+    cardBg: "bg-cyan-50 dark:bg-cyan-950",
+    shadowColor: "shadow-lg",
     popular: false,
     icon: Gem,
     subtitle: "Unlimited Job Postings",
@@ -71,10 +71,10 @@ const PLAN_VISUAL = {
 };
 
 const FALLBACK_VISUAL = {
-  gradient: "from-gray-400 to-gray-600",
-  cardBg:
-    "bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900",
-  shadowColor: "shadow-gray-200/60",
+  accentColor: "text-gray-600",
+  accentBg: "bg-gray-600",
+  cardBg: "bg-gray-50 dark:bg-gray-800",
+  shadowColor: "shadow-lg",
   popular: false,
   icon: Star,
   description: "Great value",
@@ -388,7 +388,7 @@ function Subscriptions({ subscription }) {
       <div className="w-full mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12 space-y-3">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent leading-tight">
+          <h1 className="text-2xl font-bold text-slate-800 dark:text-white leading-tight">
             Choose Your Plan
           </h1>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
@@ -399,7 +399,7 @@ function Subscriptions({ subscription }) {
 
         {/* Trial Status Banner */}
         {(subscription?.isTrial || activePlanDetails?.isTrial) && (
-          <div className="mb-8 bg-gradient-to-r from-amber-500 to-teal-500 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between text-white gap-3">
+          <div className="mb-8 bg-teal-600 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between text-white gap-3">
             <div className="flex items-center gap-3">
               <Clock className="w-6 h-6 flex-shrink-0" />
               <div>
@@ -438,7 +438,7 @@ function Subscriptions({ subscription }) {
                   key={plan.id}
                   className={`relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 group flex flex-col ${
                     visual.popular
-                      ? "shadow-2xl shadow-amber-500/20 dark:shadow-amber-500/30 ring-2 ring-amber-400/50"
+                      ? "shadow-2xl ring-2 ring-teal-400/50"
                       : `shadow-xl hover:shadow-2xl ${visual.shadowColor}`
                   }`}
                 >
@@ -446,14 +446,14 @@ function Subscriptions({ subscription }) {
                     className={`absolute inset-0 ${visual.cardBg} backdrop-blur-xl`}
                   ></div>
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${visual.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                    className={"absolute inset-0 bg-teal-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500"}
                   ></div>
 
                   <div className="relative pt-6 px-5 pb-6 flex flex-col flex-1">
                     {/* Icon & Plan Name */}
                     <div className="flex items-center gap-2.5 mb-1">
                       <div
-                        className={`w-10 h-10 rounded-xl bg-gradient-to-br ${visual.gradient} flex items-center justify-center shadow-md flex-shrink-0`}
+                        className={`w-10 h-10 rounded-xl ${visual.accentBg} flex items-center justify-center shadow-md flex-shrink-0`}
                       >
                         <Icon className="w-5 h-5 text-white" />
                       </div>
@@ -473,7 +473,7 @@ function Subscriptions({ subscription }) {
                     {/* Price */}
                     <div className="mb-5">
                       <div className="flex items-baseline gap-1">
-                        <span className={`text-3xl font-extrabold bg-gradient-to-br ${visual.gradient} bg-clip-text text-transparent`}>
+                        <span className={`text-3xl font-extrabold ${visual.accentColor}`}>
                           ${displayPrice}
                         </span>
                         {isYearly && (
@@ -541,8 +541,8 @@ function Subscriptions({ subscription }) {
                         disabled={activePlan === plan?.id && !isTrial}
                         className={`${activePlan === plan?.id ? "disabled:bg-gray-200 disabled:cursor-not-allowed" : "cursor-pointer"} w-full mt-4 py-3 px-4 rounded-xl font-bold text-center text-sm transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg group/btn ${
                           visual.popular
-                            ? "bg-gradient-to-r from-amber-500 to-teal-500 text-white hover:from-amber-600 hover:to-teal-600"
-                            : `bg-gradient-to-r ${visual.gradient} text-white hover:shadow-xl`
+                            ? "bg-teal-600 text-white hover:bg-teal-700"
+                            : `${visual.accentBg} text-white hover:shadow-xl hover:opacity-90`
                         }`}
                       >
                         {activePlan === null || isTrial
@@ -569,7 +569,7 @@ function Subscriptions({ subscription }) {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 rounded-2xl bg-teal-600 flex items-center justify-center shadow-lg">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <p className="text-sm font-semibold text-gray-900 dark:text-white">
@@ -580,7 +580,7 @@ function Subscriptions({ subscription }) {
                 </p>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 rounded-2xl bg-teal-600 flex items-center justify-center shadow-lg">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <p className="text-sm font-semibold text-gray-900 dark:text-white">
@@ -591,7 +591,7 @@ function Subscriptions({ subscription }) {
                 </p>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 rounded-2xl bg-teal-600 flex items-center justify-center shadow-lg">
                   <Star className="w-6 h-6 text-white" />
                 </div>
                 <p className="text-sm font-semibold text-gray-900 dark:text-white">
@@ -638,7 +638,7 @@ function Subscriptions({ subscription }) {
               <div className="w-full p-8 relative animate-scale-in">
                 {/* Plan icon */}
                 <div
-                  className={`w-16 h-16 rounded-full bg-gradient-to-br ${visual.gradient} flex items-center justify-center mx-auto mb-4`}
+                  className={`w-16 h-16 rounded-full ${visual.accentBg} flex items-center justify-center mx-auto mb-4`}
                 >
                   <Icon className="w-8 h-8 text-white" />
                 </div>
@@ -677,7 +677,7 @@ function Subscriptions({ subscription }) {
                         {/* From → To visual */}
                         <div className="flex items-center justify-center gap-3 mb-2">
                           <div
-                            className={`flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r ${currentVisual?.gradient || "from-gray-400 to-gray-600"} text-white text-sm font-semibold shadow-md`}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-xl ${currentVisual?.accentBg || "bg-gray-600"} text-white text-sm font-semibold shadow-md`}
                           >
                             {currentPlanName}
                           </div>
@@ -687,7 +687,7 @@ function Subscriptions({ subscription }) {
                           </div>
 
                           <div
-                            className={`flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r ${visual.gradient} text-white text-sm font-semibold shadow-md`}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-xl ${visual.accentBg} text-white text-sm font-semibold shadow-md`}
                           >
                             {selectedPlan.name}
                           </div>
@@ -924,7 +924,7 @@ function Subscriptions({ subscription }) {
           size="xl"
           closeOnOverlayClick={false}
         >
-          <div className="bg-gradient-to-br from-theme_color/20 to-emerald-50 dark:from-green-950/40 dark:to-emerald-950/40 border border-green-200 dark:border-green-800/60 rounded-2xl p-8 shadow-2xl">
+          <div className="bg-emerald-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800/60 rounded-2xl p-8 shadow-2xl">
             <div className="flex items-center gap-4 mb-5">
               <div className="w-14 h-14 rounded-xl bg-green-600 flex items-center justify-center flex-shrink-0">
                 <Zap className="w-7 h-7 text-white" />
@@ -957,7 +957,7 @@ function Subscriptions({ subscription }) {
                 href={paymentLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 py-4 px-6 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl"
+                className="flex-1 flex items-center justify-center gap-2 py-4 px-6 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl"
               >
                 <ExternalLink className="w-5 h-5" />
                 Open Payment Page

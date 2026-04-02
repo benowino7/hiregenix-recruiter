@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <>
-    <footer className="relative bg-gradient-to-b from-slate-950 to-black text-slate-300 overflow-hidden">
+    <footer className="relative bg-slate-950 text-slate-300 overflow-hidden">
       {/* Animated background orbs */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div className="absolute top-20 left-10 md:left-1/4 w-64 md:w-96 h-64 md:h-96 bg-[#0097A7]/10 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -142,7 +142,7 @@ const Footer = () => {
                 { Icon: Facebook, href: '#', color: 'hover:bg-blue-600' },
                 { Icon: Twitter, href: '#', color: 'hover:bg-sky-500' },
                 { Icon: Linkedin, href: '#', color: 'hover:bg-blue-700' },
-                { Icon: Instagram, href: '#', color: 'hover:bg-gradient-to-br from-purple-600 to-pink-600' },
+                { Icon: Instagram, href: '#', color: 'hover:bg-pink-600' },
               ].map(({ Icon, href, color }, i) => (
                 <a
                   key={i}
@@ -163,7 +163,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-6 md:right-10 z-50 w-12 h-12 bg-gradient-to-br from-[#0097A7] to-teal-600 rounded-full flex items-center justify-center shadow-2xl hover:shadow-teal-500/40 hover:scale-110 transition-all duration-300 group"
+        className="fixed bottom-8 right-6 md:right-10 z-50 w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center shadow-2xl hover:shadow-lg hover:scale-110 transition-all duration-300 group"
         aria-label="Scroll to top"
       >
         <ArrowUp size={22} className="text-white group-hover:animate-bounce" />

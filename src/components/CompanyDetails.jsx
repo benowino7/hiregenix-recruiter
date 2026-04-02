@@ -177,7 +177,7 @@ const CompanyDetails = () => {
         <div className="min-h-screen bg-[#e7f0fa] dark:bg-gray-950 transition-colors duration-300">
 
             {/* Cover Image */}
-            <div className="relative h-64 md:h-80 bg-gradient-to-r from-theme_color to-teal-600 overflow-hidden">
+            <div className="relative h-64 md:h-80 bg-teal-600 overflow-hidden">
                 <img
                     src={company.cover_image}
                     alt={company.name}

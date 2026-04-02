@@ -67,7 +67,7 @@ const Heros = () => {
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 sm:mb-6 animate-fade-in-up">
               Stop Screening.{' '}
-              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-theme_color via-teal-400 to-[#FFB366]">
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-teal-400">
                 Let AI Find{' '}
               </span>
               Your Perfect Hire

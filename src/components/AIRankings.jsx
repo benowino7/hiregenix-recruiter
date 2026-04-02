@@ -191,7 +191,7 @@ const CandidateRankingCard = ({ candidate, rank, index }) => {
             <div
               className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg ${
                 rank <= 3
-                  ? "bg-gradient-to-br from-teal-400 to-teal-600 text-white shadow-lg shadow-teal-500/30"
+                  ? "bg-teal-600 text-white shadow-lg"
                   : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
               }`}
             >

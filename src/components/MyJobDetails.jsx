@@ -662,7 +662,7 @@ const MyJobDetails = ({ companyId, subscription }) => {
 
               {/* Upsell card for non-subscribers */}
               {!hasAISuggestions && (
-                <div className="mt-4 p-5 bg-gradient-to-br from-violet-50 to-indigo-50 dark:from-violet-950/30 dark:to-indigo-950/30 border border-violet-200 dark:border-violet-800/40 rounded-2xl">
+                <div className="mt-4 p-5 bg-violet-50 dark:bg-violet-950/30 border border-violet-200 dark:border-violet-800/40 rounded-2xl">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles size={18} className="text-violet-500" />
                     <h3 className="font-bold text-gray-900 dark:text-white text-sm">

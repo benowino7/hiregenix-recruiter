@@ -111,7 +111,7 @@ export default function RecruiterHeader() {
 
             <a
               href="/register"
-              className="hidden lg:inline-flex px-6 py-3 text-base font-semibold rounded-xl bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-600 text-white shadow-lg shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300 items-center gap-2"
+              className="hidden lg:inline-flex px-6 py-3 text-base font-semibold rounded-xl bg-teal-600 hover:bg-teal-700 text-white shadow-lg transition-all duration-300 items-center gap-2"
             >
               <Building2 size={18} />
               Start Hiring
@@ -164,7 +164,7 @@ export default function RecruiterHeader() {
             </a>
             <a
               href="/register"
-              className="py-4 px-6 text-center font-semibold text-lg rounded-xl bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-600 text-white shadow-lg transition-colors"
+              className="py-4 px-6 text-center font-semibold text-lg rounded-xl bg-teal-600 hover:bg-teal-700 text-white shadow-lg transition-colors"
               onClick={closeMenu}
             >
               Start Hiring Now

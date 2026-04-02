@@ -153,11 +153,11 @@ export default function DashboardOverview({ subscription }) {
     return (
       <div className="p-4 md:p-6">
         <div className="mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 dark:from-white dark:via-teal-400 dark:to-white bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
             Hiring Dashboard
           </h1>
         </div>
-        <button onClick={() => navigate('/dashboard/subscriptions')} className="w-full p-5 bg-gradient-to-r from-teal-50 to-amber-50 dark:from-teal-900/20 dark:to-amber-900/20 border border-teal-200 dark:border-teal-800 rounded-2xl hover:shadow-lg transition-all group text-left">
+        <button onClick={() => navigate('/dashboard/subscriptions')} className="w-full p-5 bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-2xl hover:shadow-lg transition-all group text-left">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/40 rounded-xl flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
@@ -204,7 +204,7 @@ export default function DashboardOverview({ subscription }) {
     <div className="p-4 md:p-6">
       {/* Trial Banner */}
       {subscription?.isTrial && (
-        <div className="mb-6 bg-gradient-to-r from-amber-500 to-teal-500 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between text-white gap-3">
+        <div className="mb-6 bg-teal-600 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between text-white gap-3">
           <div className="flex items-center gap-3">
             <Clock className="w-6 h-6 flex-shrink-0" />
             <div>
@@ -230,7 +230,7 @@ export default function DashboardOverview({ subscription }) {
       <div className="mb-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 dark:from-white dark:via-teal-400 dark:to-white bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
               Hiring Dashboard
             </h1>
             <p className="text-gray-600 dark:text-gray-400 mt-2 flex items-center gap-2">
@@ -243,7 +243,7 @@ export default function DashboardOverview({ subscription }) {
           <div className="flex flex-wrap gap-3">
             <button
               onClick={() => navigate('/dashboard/job_management')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold rounded-xl shadow-lg shadow-teal-500/30 hover:shadow-xl hover:shadow-teal-500/40 transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
               <Plus size={18} /> Post New Job
             </button>
@@ -303,72 +303,65 @@ export default function DashboardOverview({ subscription }) {
             label: 'Total Jobs Posted',
             value: totalJobs,
             icon: Briefcase,
-            bgGradient: 'from-teal-50 to-teal-100/50 dark:from-teal-500/10 dark:to-teal-600/10',
+            bgColor: 'bg-teal-50 dark:bg-teal-500/10',
             iconBg: 'bg-teal-100 dark:bg-teal-500/20',
             iconColor: 'text-teal-600 dark:text-teal-400',
-            gradient: 'from-teal-500 to-teal-600',
           },
           {
             label: 'Total Applications',
             value: totalApplications,
             icon: FileText,
-            bgGradient: 'from-blue-50 to-blue-100/50 dark:from-blue-500/10 dark:to-blue-600/10',
+            bgColor: 'bg-blue-50 dark:bg-blue-500/10',
             iconBg: 'bg-blue-100 dark:bg-blue-500/20',
             iconColor: 'text-blue-600 dark:text-blue-400',
-            gradient: 'from-blue-500 to-blue-600',
           },
           {
             label: 'Shortlisted',
             value: shortlisted,
             icon: UserCheck,
-            bgGradient: 'from-purple-50 to-purple-100/50 dark:from-purple-500/10 dark:to-purple-600/10',
+            bgColor: 'bg-purple-50 dark:bg-purple-500/10',
             iconBg: 'bg-purple-100 dark:bg-purple-500/20',
             iconColor: 'text-purple-600 dark:text-purple-400',
-            gradient: 'from-purple-500 to-purple-600',
           },
           {
             label: 'Interviews',
             value: interviews,
             icon: Calendar,
-            bgGradient: 'from-amber-50 to-amber-100/50 dark:from-amber-500/10 dark:to-amber-600/10',
+            bgColor: 'bg-amber-50 dark:bg-amber-500/10',
             iconBg: 'bg-amber-100 dark:bg-amber-500/20',
             iconColor: 'text-amber-600 dark:text-amber-400',
-            gradient: 'from-amber-500 to-amber-600',
           },
           {
             label: 'Hired',
             value: hired,
             icon: CheckCircle,
-            bgGradient: 'from-green-50 to-green-100/50 dark:from-green-500/10 dark:to-green-600/10',
+            bgColor: 'bg-green-50 dark:bg-green-500/10',
             iconBg: 'bg-green-100 dark:bg-green-500/20',
             iconColor: 'text-green-600 dark:text-green-400',
-            gradient: 'from-green-500 to-green-600',
           },
           {
             label: 'Pending Review',
             value: pending,
             icon: Clock,
-            bgGradient: 'from-cyan-50 to-cyan-100/50 dark:from-cyan-500/10 dark:to-cyan-600/10',
+            bgColor: 'bg-cyan-50 dark:bg-cyan-500/10',
             iconBg: 'bg-cyan-100 dark:bg-cyan-500/20',
             iconColor: 'text-cyan-600 dark:text-cyan-400',
-            gradient: 'from-cyan-500 to-cyan-600',
           },
           {
             label: 'Closed Jobs',
             value: closedJobs,
             icon: Archive,
-            bgGradient: 'from-gray-50 to-gray-100/50 dark:from-gray-500/10 dark:to-gray-600/10',
+            bgColor: 'bg-gray-50 dark:bg-gray-500/10',
             iconBg: 'bg-gray-100 dark:bg-gray-500/20',
             iconColor: 'text-gray-600 dark:text-gray-400',
-            gradient: 'from-gray-500 to-gray-600',
           },
         ].map((m, i) => (
           <div
             key={i}
-            className={`relative bg-gradient-to-br ${m.bgGradient} rounded-2xl p-6 border border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all group overflow-hidden`}
+            className={`relative ${m.bgColor} rounded-2xl p-6 border border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all group overflow-hidden`}
           >
             {/* Background decoration */}
-            <div className={`absolute -right-8 -bottom-8 w-32 h-32 bg-gradient-to-br ${m.gradient} opacity-5 rounded-full group-hover:scale-110 transition-transform`}></div>
+            <div className={"absolute -right-8 -bottom-8 w-32 h-32 bg-teal-500 opacity-5 rounded-full group-hover:scale-110 transition-transform"}></div>
 
             <div className="relative">
               <div className="flex items-start justify-between mb-4">
@@ -571,9 +564,9 @@ export default function DashboardOverview({ subscription }) {
               {topCandidates.map((match, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-white dark:from-gray-700/30 dark:to-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all group"
+                  className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                  <div className="w-12 h-12 rounded-xl bg-teal-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
                     {(match.name || match.candidateName || '??').substring(0, 2).toUpperCase()}
                   </div>
                   <div className="flex-1">
@@ -667,7 +660,7 @@ export default function DashboardOverview({ subscription }) {
         <div className="flex gap-3 max-w-7xl mx-auto">
           <button
             onClick={() => navigate('/dashboard/job_management')}
-            className="flex-1 py-3 bg-gradient-to-r from-teal-600 to-teal-500 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-teal-500/30"
+            className="flex-1 py-3 bg-teal-600 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg"
           >
             <Plus size={18} /> Post Job
           </button>

@@ -345,7 +345,7 @@ export default function AIJobPosting({ subscription }) {
                   message: "Upgrade to Platinum to access AI Job Posting.",
                 })
               }
-              className="px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold rounded-xl hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-violet-500/25"
+              className="px-6 py-3 bg-teal-600 text-white text-sm font-semibold rounded-xl hover:bg-teal-700 transition-all shadow-lg"
             >
               Upgrade to Platinum
             </button>

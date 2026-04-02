@@ -124,8 +124,8 @@ const JobDetails = () => {
             <a
               href="/login"
               className="
-                px-6 sm:px-8 py-3 bg-gradient-to-r from-teal-600 to-teal-500
-                hover:from-teal-700 hover:to-teal-600
+                px-6 sm:px-8 py-3 bg-teal-600
+                hover:bg-teal-700
                 text-white font-semibold rounded-xl shadow-md hover:shadow-lg
                 transition-all flex items-center gap-2 text-base
               "
@@ -272,8 +272,8 @@ const JobDetails = () => {
               <a
                 href="/login"
                 className="
-                  w-full py-4 bg-gradient-to-r from-teal-600 to-teal-500
-                  hover:from-teal-700 hover:to-teal-600
+                  w-full py-4 bg-teal-600
+                  hover:bg-teal-700
                   text-white font-bold rounded-xl shadow-md hover:shadow-lg
                   transition-all mb-4 flex items-center justify-center gap-2 text-lg
                 "
