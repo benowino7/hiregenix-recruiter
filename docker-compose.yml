@@ -1,0 +1,19 @@
+services:
+  hiregenix_recruiter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hiregenix_recruiter
+    environment:
+      - VIRTUAL_HOST=recruiter.hiregenix.ai
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=recruiter.hiregenix.ai
+      - LETSENCRYPT_EMAIL=isaac.ochieng2000@gmail.com
+    expose:
+      - "80"
+    networks:
+      - proxy
+    restart: unless-stopped
+networks:
+  proxy:
+    external: true
