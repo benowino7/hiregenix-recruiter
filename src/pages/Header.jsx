@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X, Briefcase, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../themes/ThemeContext';
+import logo from '../assets/logo.png';
+import logodark from '../assets/logodark.png';
 
 const navItems = [
   { name: 'Home', path: '/#home' },
@@ -57,7 +59,7 @@ export default function RecruiterHeader() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-teal-600/30 bg-white/90 backdrop-blur-xl dark:bg-gray-950/90 dark:border-teal-500/40 transition-colors duration-300 shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white dark:bg-gray-950 dark:border-gray-800 transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 md:h-20 items-center justify-between">
 
@@ -74,12 +76,10 @@ export default function RecruiterHeader() {
 
             <a
               href="https://candidate.hiregenix.ai"
-              className="flex items-center text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight"
+              className="flex items-center"
               onClick={closeMenu}
             >
-              <span className="text-teal-600 dark:text-teal-500">Top</span>
-              <span className="text-gray-900 dark:text-white">Dubai</span>
-              <span className="text-teal-600 dark:text-teal-500">Jobs</span>
+              <img src={isDark ? logodark : logo} alt="HireGeniX" className="h-8 sm:h-10" />
             </a>
           </div>
 
