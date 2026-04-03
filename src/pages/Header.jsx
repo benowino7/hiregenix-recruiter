@@ -79,7 +79,7 @@ export default function RecruiterHeader() {
               className="flex items-center"
               onClick={closeMenu}
             >
-              <img src={isDark ? logodark : logo} alt="HireGeniX" className="h-8 sm:h-10" />
+              <img src={isDark ? logodark : logo} alt="HireGeniX" className="w-[140px] sm:w-[160px] md:w-[180px] h-auto" />
             </a>
           </div>
 
