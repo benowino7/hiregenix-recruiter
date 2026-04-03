@@ -4,7 +4,7 @@ import { Check, X, Crown, Star, Zap, ArrowRight, Sparkles, Shield, Gem } from 'l
 
 const plans = [
     {
-        name: 'Package 1',
+        name: 'Silver',
         subtitle: 'Single Job Posting',
         price: 99,
         interval: 'one-time',
@@ -26,7 +26,7 @@ const plans = [
         ],
     },
     {
-        name: 'Package 2',
+        name: 'Gold',
         subtitle: '3 Job Postings',
         price: 240,
         interval: 'one-time',
@@ -48,7 +48,7 @@ const plans = [
         ],
     },
     {
-        name: 'Package 3',
+        name: 'Platinum',
         subtitle: '5 Job Postings',
         price: 350,
         interval: 'one-time',
@@ -70,7 +70,7 @@ const plans = [
         ],
     },
     {
-        name: 'Package 4',
+        name: 'Diamond',
         subtitle: 'Unlimited Job Postings',
         price: 9900,
         interval: 'year',

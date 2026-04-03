@@ -28,7 +28,7 @@ import successMessage from "../utilities/successMessage";
 
 // ─── Static visual config keyed by plan name ──────────────────────────────────
 const PLAN_VISUAL = {
-  "Diamond": {
+  "Silver": {
     accentColor: "text-slate-600",
     accentBg: "bg-slate-600",
     cardBg: "bg-slate-50 dark:bg-gray-800",
@@ -38,7 +38,7 @@ const PLAN_VISUAL = {
     subtitle: "Single (1) Job Posting",
     description: "Post a single job vacancy",
   },
-  "Diamond Compact": {
+  "Gold": {
     accentColor: "text-teal-600",
     accentBg: "bg-teal-600",
     cardBg: "bg-amber-50 dark:bg-amber-950",
@@ -48,7 +48,7 @@ const PLAN_VISUAL = {
     subtitle: "Three (3) Job Postings",
     description: "Best value for growing teams",
   },
-  "Diamond Compact Plus": {
+  "Platinum": {
     accentColor: "text-purple-600",
     accentBg: "bg-purple-600",
     cardBg: "bg-purple-50 dark:bg-purple-950",
@@ -58,7 +58,7 @@ const PLAN_VISUAL = {
     subtitle: "Five (5) Job Postings",
     description: "For active hiring teams",
   },
-  "Diamond Unlimited": {
+  "Diamond": {
     accentColor: "text-cyan-600",
     accentBg: "bg-cyan-600",
     cardBg: "bg-cyan-50 dark:bg-cyan-950",
@@ -423,14 +423,14 @@ function Subscriptions({ subscription }) {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 w-full mx-auto mb-16">
           {plans
-            .filter((p) => p.name !== "Free Trial" && (p.name.startsWith("Diamond") || PLAN_VISUAL[p.name]))
+            .filter((p) => p.name !== "Free Trial" && !p.name.includes("(Legacy)") && PLAN_VISUAL[p.name])
             .map((plan) => {
               const visual = PLAN_VISUAL[plan.name] || FALLBACK_VISUAL;
               const Icon = visual.icon;
               const featureList = buildFeatureList(plan.features);
 
               const priceUsd = plan.amount / 100;
-              const isYearly = plan.name === "Diamond Unlimited";
+              const isYearly = plan.name === "Diamond";
               const displayPrice = priceUsd.toLocaleString();
 
               return (
@@ -614,7 +614,7 @@ function Subscriptions({ subscription }) {
           const visual = PLAN_VISUAL[selectedPlan.name] || FALLBACK_VISUAL;
           const Icon = visual.icon;
           const displayPrice = (selectedPlan.amount / 100).toLocaleString();
-          const isYearlyPlan = selectedPlan.name === "Diamond Unlimited";
+          const isYearlyPlan = selectedPlan.name === "Diamond";
 
           // Current plan visual for upgrade flow
           const currentPlanName = upgradeQuote?.currentSubscription?.plan?.name;
