@@ -423,7 +423,7 @@ function Subscriptions({ subscription }) {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 w-full mx-auto mb-16">
           {plans
-            .filter((p) => p.name !== "Free Trial")
+            .filter((p) => p.name !== "Free Trial" && (p.name.startsWith("Diamond") || PLAN_VISUAL[p.name]))
             .map((plan) => {
               const visual = PLAN_VISUAL[plan.name] || FALLBACK_VISUAL;
               const Icon = visual.icon;
