@@ -265,6 +265,30 @@ function Subscriptions({ subscription }) {
       return;
     }
 
+    // If PayPal selected, use PayPal API
+    if (paymentMethod === "PAYPAL") {
+      setLoadingSubscription(true);
+      try {
+        const res = await fetch(`${BASE_URL}/recruiter/subscriptions/paypal`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify({ planId: plan?.id }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data?.message || "Failed to initiate PayPal payment");
+        if (data?.result?.approveUrl) {
+          window.location.href = data.result.approveUrl;
+        } else {
+          throw new Error("No PayPal approval URL returned");
+        }
+      } catch (err) {
+        alert(err.message);
+      } finally {
+        setLoadingSubscription(false);
+      }
+      return;
+    }
+
     setLoadingSubscription(true);
     setPaymentLink(null);
     setPaymentMessage(null);
@@ -769,7 +793,7 @@ function Subscriptions({ subscription }) {
                   <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
                     Choose Payment Method
                   </p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-3 gap-3">
                     {/* Card */}
                     <label
                       className={`relative flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
@@ -870,6 +894,27 @@ function Subscriptions({ subscription }) {
                           <p className="text-xs text-gray-400 dark:text-gray-500">
                             Fast wallet payment
                           </p>
+                        </div>
+                      </div>
+                    </label>
+
+                    {/* PayPal */}
+                    <label
+                      className={`relative flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
+                        paymentMethod === "PAYPAL"
+                          ? "border-theme_color bg-theme_color/5 dark:bg-theme_color/10"
+                          : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
+                      }`}
+                    >
+                      <input type="radio" name="paymentMethod" value="PAYPAL" checked={paymentMethod === "PAYPAL"} onChange={() => setPaymentMethod("PAYPAL")} className="sr-only" />
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${paymentMethod === "PAYPAL" ? "border-theme_color bg-theme_color" : "border-gray-300 dark:border-gray-600"}`}>
+                        {paymentMethod === "PAYPAL" && <div className="w-2 h-2 rounded-full bg-white" />}
+                      </div>
+                      <div className="flex items-center gap-2 min-w-0">
+                        <svg className={`w-5 h-5 flex-shrink-0 ${paymentMethod === "PAYPAL" ? "text-[#003087]" : "text-gray-400"}`} viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+                        <div>
+                          <p className={`text-sm font-semibold leading-tight ${paymentMethod === "PAYPAL" ? "text-[#003087]" : "text-gray-700 dark:text-gray-300"}`}>PayPal</p>
+                          <p className="text-xs text-gray-400 dark:text-gray-500">Secure checkout</p>
                         </div>
                       </div>
                     </label>
