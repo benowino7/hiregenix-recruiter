@@ -9,7 +9,7 @@ import logodark from '../assets/logodark.png';
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Pricing', path: '/pricing' },
-  { name: 'How It Works', path: '/about' },
+  { name: 'How It Works', path: '/#how_it_works' },
   { name: 'Contact', path: '/contact' },
   { name: 'Login', path: '/login' },
 ];
