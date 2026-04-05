@@ -7,10 +7,11 @@ import logo from '../assets/logo.png';
 import logodark from '../assets/logodark.png';
 
 const navItems = [
-  { name: 'Home', path: '/#home' },
+  { name: 'Home', path: '/' },
   { name: 'Pricing', path: '/pricing' },
-  { name: 'How It Works', path: '/#how_it_works' },
+  { name: 'How It Works', path: '/about' },
   { name: 'Contact', path: '/contact' },
+  { name: 'Login', path: '/login' },
 ];
 
 export default function RecruiterHeader() {

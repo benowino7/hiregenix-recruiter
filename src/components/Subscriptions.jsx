@@ -129,7 +129,7 @@ function Subscriptions({ subscription }) {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [activePlan, setActivePlan] = useState(null);
   const [loadingSubscription, setLoadingSubscription] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("CARD");
+  const [paymentMethod, setPaymentMethod] = useState("PAYPAL");
   const [askingPrice, setAskingPrice] = useState(false);
 
   const handleAskForPrice = async () => {
@@ -247,7 +247,7 @@ function Subscriptions({ subscription }) {
     setShowConfirmation(true);
     setPaymentLink(null);
     setPaymentMessage(null);
-    setPaymentMethod("CARD");
+    setPaymentMethod("PAYPAL");
     setUpgradeQuote(null);
     setQuoteError(null);
 
@@ -788,117 +788,13 @@ function Subscriptions({ subscription }) {
                   </div>
                 </div>
 
-                {/* ── Payment method selector ────────────────────────── */}
+                {/* ── Payment method ────────────────────────── */}
                 <div className="mb-6">
                   <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
-                    Choose Payment Method
+                    Payment Method
                   </p>
-                  <div className="grid grid-cols-3 gap-3">
-                    {/* Card */}
-                    <label
-                      className={`relative flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
-                        paymentMethod === "CARD"
-                          ? "border-theme_color bg-theme_color/5 dark:bg-theme_color/10"
-                          : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="CARD"
-                        checked={paymentMethod === "CARD"}
-                        onChange={() => setPaymentMethod("CARD")}
-                        className="sr-only"
-                      />
-                      <div
-                        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                          paymentMethod === "CARD"
-                            ? "border-theme_color bg-theme_color"
-                            : "border-gray-300 dark:border-gray-600"
-                        }`}
-                      >
-                        {paymentMethod === "CARD" && (
-                          <div className="w-2 h-2 rounded-full bg-white" />
-                        )}
-                      </div>
-                      <div className="flex items-center gap-2 min-w-0">
-                        <CreditCard
-                          className={`w-5 h-5 flex-shrink-0 ${
-                            paymentMethod === "CARD"
-                              ? "text-theme_color dark:text-dark-theme_color"
-                              : "text-gray-400"
-                          }`}
-                        />
-                        <div>
-                          <p
-                            className={`text-sm font-semibold leading-tight ${
-                              paymentMethod === "CARD"
-                                ? "text-theme_color dark:text-dark-theme_color"
-                                : "text-gray-700 dark:text-gray-300"
-                            }`}
-                          >
-                            Card
-                          </p>
-                          <p className="text-xs text-gray-400 dark:text-gray-500">
-                            Direct card payment
-                          </p>
-                        </div>
-                      </div>
-                    </label>
-
-                    {/* Google / Apple Pay */}
-                    <label
-                      className={`relative flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
-                        paymentMethod === "GPAY_APAY"
-                          ? "border-theme_color bg-theme_color/5 dark:bg-theme_color/10"
-                          : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="GPAY_APAY"
-                        checked={paymentMethod === "GPAY_APAY"}
-                        onChange={() => setPaymentMethod("GPAY_APAY")}
-                        className="sr-only"
-                      />
-                      <div
-                        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                          paymentMethod === "GPAY_APAY"
-                            ? "border-theme_color bg-theme_color"
-                            : "border-gray-300 dark:border-gray-600"
-                        }`}
-                      >
-                        {paymentMethod === "GPAY_APAY" && (
-                          <div className="w-2 h-2 rounded-full bg-white" />
-                        )}
-                      </div>
-                      <div className="flex items-center gap-2 min-w-0">
-                        <Smartphone
-                          className={`w-5 h-5 flex-shrink-0 ${
-                            paymentMethod === "GPAY_APAY"
-                              ? "text-theme_color dark:text-dark-theme_color"
-                              : "text-gray-400"
-                          }`}
-                        />
-                        <div>
-                          <p
-                            className={`text-sm font-semibold leading-tight ${
-                              paymentMethod === "GPAY_APAY"
-                                ? "text-theme_color dark:text-dark-theme_color"
-                                : "text-gray-700 dark:text-gray-300"
-                            }`}
-                          >
-                            G Pay / Apple Pay
-                          </p>
-                          <p className="text-xs text-gray-400 dark:text-gray-500">
-                            Fast wallet payment
-                          </p>
-                        </div>
-                      </div>
-                    </label>
-
-                    {/* PayPal */}
+                  <div className="grid grid-cols-1 gap-3">
+                    {/* PayPal - only active payment method */}
                     <label
                       className={`relative flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
                         paymentMethod === "PAYPAL"
