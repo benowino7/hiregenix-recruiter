@@ -76,7 +76,7 @@ export default function RecruiterHeader() {
             </button>
 
             <a
-              href="https://candidate.hiregenix.ai"
+              href="/"
               className="flex items-center"
               onClick={closeMenu}
             >
